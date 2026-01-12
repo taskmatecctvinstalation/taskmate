@@ -221,89 +221,121 @@ footer{
 
 </div>
 
-<!-- ====== COLOURFUL ENQUIRY SECTION START ====== -->
+<!-- ====== FINAL CCTV QUOTATION & ENQUIRY SECTION START ====== -->
 <section id="enquiry" style="padding:40px 15px;background:linear-gradient(135deg,#e3f2fd,#ffffff);font-family:Arial,sans-serif;">
-  <div style="max-width:900px;margin:auto;background:#fff;border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,0.1);padding:25px;">
+  <div style="max-width:980px;margin:auto;background:#fff;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,0.15);padding:25px;">
 
-    <h2 style="text-align:center;background:#0d47a1;color:#fff;padding:15px;border-radius:8px;margin-bottom:25px;">
-      📩 Get Free CCTV Quotation
+    <h2 style="text-align:center;background:#0d47a1;color:#fff;padding:15px;border-radius:10px;margin-bottom:25px;">
+      📋 CCTV Quotation & Enquiry Form
     </h2>
 
-    <!-- FORM START -->
-    <form id="enquiryForm" action="https://formsubmit.co/taskmate.co.in@gmail.com" method="POST">
+    <form id="quotationForm"
+          action="https://formsubmit.co/taskmate.co.in@gmail.com"
+          method="POST">
 
-      <!-- FormSubmit settings -->
-      <input type="hidden" name="_subject" value="New CCTV Enquiry from Website">
+      <!-- FormSubmit Settings -->
+      <input type="hidden" name="_subject" value="New CCTV Quotation Enquiry">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
 
-      <!-- Customer Details -->
+      <!-- CUSTOMER DETAILS -->
       <h3 style="color:#2e7d32;">👤 Customer Details</h3>
 
-      <input type="text" name="Name" id="name" placeholder="Customer Name *" required
-        style="width:100%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:6px;">
+      <input type="text" id="name" name="Customer Name" placeholder="Customer Name *" required style="width:100%;padding:10px;margin:8px 0;border-radius:6px;border:1px solid #ccc;">
 
-      <input type="tel" name="Mobile" id="mobile" placeholder="Mobile Number *" required
-        style="width:100%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:6px;">
+      <input type="tel" id="mobile" name="Mobile Number" placeholder="Mobile Number *" required style="width:100%;padding:10px;margin:8px 0;border-radius:6px;border:1px solid #ccc;">
 
-      <input type="text" name="Area" id="area" placeholder="Area / Location"
-        style="width:100%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:6px;">
+      <textarea id="address" name="Address" placeholder="Full Address" required style="width:100%;padding:10px;margin:8px 0;border-radius:6px;border:1px solid #ccc;"></textarea>
 
-      <textarea name="Address" id="address" placeholder="Full Address"
-        style="width:100%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:6px;"></textarea>
-
-      <!-- Camera Details -->
+      <!-- CAMERA DETAILS -->
       <h3 style="color:#6a1b9a;margin-top:20px;">📷 Camera Details</h3>
 
-      <select name="Brand" id="brand"
-        style="width:100%;padding:10px;margin:8px 0;border-radius:6px;">
+      <!-- BRAND -->
+      <select id="brand" name="Camera Brand" required style="width:100%;padding:10px;margin:8px 0;border-radius:6px;">
         <option value="">Select Camera Brand</option>
         <option>Hikvision</option>
         <option>CP Plus</option>
         <option>Dahua</option>
+        <option>Honeywell</option>
+        <option>Godrej</option>
+        <option>Panasonic</option>
+        <option>Prama</option>
         <option>No Preference</option>
       </select>
 
-     
+      <!-- SYSTEM TYPE -->
+      <div style="margin:10px 0;">
+        <strong>System Type:</strong><br>
+        <label><input type="radio" name="System Type" value="IP Camera" required> IP Camera</label>
+        &nbsp;&nbsp;
+        <label><input type="radio" name="System Type" value="Analog Camera"> Analog Camera</label>
+      </div>
 
-      <!-- Submit -->
-      <button type="submit"
-        style="width:100%;margin-top:25px;padding:15px;
-        background:#25D366;color:#fff;font-size:18px;
-        border:none;border-radius:30px;cursor:pointer;">
-        📲 Send Enquiry
+      <!-- MODEL -->
+      <select id="model" name="Camera Model" required style="width:100%;padding:10px;margin:8px 0;border-radius:6px;">
+        <option value="">Select Camera Model</option>
+        <option>2MP</option>
+        <option>4MP</option>
+        <option>5MP</option>
+        <option>8MP</option>
+        <option>ColorVu</option>
+        <option>Full Color</option>
+        <option>Audio Camera</option>
+      </select>
+
+      <!-- CAMERA TYPE & QUANTITY -->
+      <h3 style="color:#ef6c00;margin-top:20px;">📦 Camera Type & Quantity</h3>
+
+      <label>Bullet Camera Quantity</label>
+      <select id="bulletQty" name="Bullet Camera Quantity" style="width:100%;padding:10px;margin:6px 0;">
+        <option value="">Select Quantity</option>
+        <script>for(let i=1;i<=100;i++){document.write(`<option>${i}</option>`);}</script>
+      </select>
+
+      <label>Dome Camera Quantity</label>
+      <select id="domeQty" name="Dome Camera Quantity" style="width:100%;padding:10px;margin:6px 0;">
+        <option value="">Select Quantity</option>
+        <script>for(let i=1;i<=100;i++){document.write(`<option>${i}</option>`);}</script>
+      </select>
+
+      <label>WiFi Camera Quantity</label>
+      <select id="wifiQty" name="WiFi Camera Quantity" style="width:100%;padding:10px;margin:6px 0;">
+        <option value="">Select Quantity</option>
+        <script>for(let i=1;i<=100;i++){document.write(`<option>${i}</option>`);}</script>
+      </select>
+
+      <!-- SUBMIT -->
+      <button type="submit" style="width:100%;margin-top:25px;padding:15px;background:#25D366;color:#fff;font-size:18px;border:none;border-radius:30px;cursor:pointer;">
+        📲 Send Quotation on WhatsApp
       </button>
 
-      <p style="text-align:center;color:#555;font-size:13px;margin-top:8px;">
-        ✔ WhatsApp message + ✔ Automatic email
+      <p style="text-align:center;font-size:13px;color:#555;margin-top:8px;">
+        ✔ WhatsApp + ✔ Automatic Email
       </p>
     </form>
   </div>
 </section>
 
 <script>
-  function toggleQty(checkId, qtyId){
-    document.getElementById(checkId).addEventListener('change', function(){
-      document.getElementById(qtyId).disabled = !this.checked;
-    });
-  }
-  toggleQty('bullet','bulletQty');
-  toggleQty('dome','domeQty');
-  toggleQty('wifi','wifiQty');
+document.getElementById('quotationForm').addEventListener('submit', function(){
+  let msg =
+    "New CCTV Quotation Enquiry\n\n" +
+    "Name: " + document.getElementById('name').value + "\n" +
+    "Mobile: " + document.getElementById('mobile').value + "\n" +
+    "Address: " + document.getElementById('address').value + "\n" +
+    "Brand: " + document.getElementById('brand').value + "\n" +
+    "Model: " + document.getElementById('model').value + "\n" +
+    "Bullet Qty: " + document.getElementById('bulletQty').value + "\n" +
+    "Dome Qty: " + document.getElementById('domeQty').value + "\n" +
+    "WiFi Qty: " + document.getElementById('wifiQty').value;
 
-  document.getElementById('enquiryForm').addEventListener('submit', function(){
-    setTimeout(function(){
-      let msg = encodeURIComponent(
-        "New CCTV Enquiry\n" +
-        "Name: " + document.getElementById('name').value + "\n" +
-        "Mobile: " + document.getElementById('mobile').value + "\n" +
-        "Area: " + document.getElementById('area').value
-      );
-      window.open("https://wa.me/918084078886?text=" + msg, "_blank");
-    }, 500);
-  });
+  window.open(
+    "https://wa.me/918084078886?text=" + encodeURIComponent(msg),
+    "_blank"
+  );
+});
 </script>
-<!-- ====== COLOURFUL ENQUIRY SECTION END ====== -->
+<!-- ====== FINAL CCTV QUOTATION & ENQUIRY SECTION END ====== -->
 
 <!-- WHATSAPP BUTTON (SAFE) -->
 <p style="text-align:center;margin:40px 0;">
@@ -341,6 +373,7 @@ footer{
 
 </body>
 </html>
+
 
 
 
