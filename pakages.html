@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CCTV Packages | TaskMate CCTV</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f5f7fa;
+}
+
+/* ===== HEADER ===== */
+.header{
+  background:#0d47a1;
+  color:#fff;
+  padding:20px;
+  text-align:center;
+}
+.header a{
+  color:#ffeb3b;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* ===== PACKAGES SECTION ===== */
+.packages{
+  padding:70px 20px;
+  background:linear-gradient(135deg,#0d47a1,#1976d2);
+}
+.packages h2{
+  text-align:center;
+  color:#fff;
+  font-size:34px;
+}
+.packages p.sub{
+  text-align:center;
+  color:#e3f2fd;
+  font-size:18px;
+  margin-bottom:45px;
+}
+
+.grid{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:#fff;
+  border-radius:14px;
+  padding:30px;
+  text-align:center;
+  position:relative;
+}
+.card h3{
+  margin-top:10px;
+}
+.price{
+  font-size:22px;
+  margin:20px 0;
+  font-weight:bold;
+}
+.btn{
+  display:inline-block;
+  padding:12px 26px;
+  border-radius:30px;
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* colors */
+.green{border-top:6px solid #4caf50;}
+.orange{border-top:6px solid #ff9800;}
+.purple{border-top:6px solid #9c27b0;}
+.green .price{color:#2e7d32;}
+.orange .price{color:#e65100;}
+.purple .price{color:#6a1b9a;}
+.green .btn{background:#4caf50;}
+.orange .btn{background:#ff9800;}
+.purple .btn{background:#9c27b0;}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <h1>📦 CCTV Packages</h1>
+  <a href="index.html">← Back to Home</a>
+</div>
+
+<!-- PACKAGES -->
+<section class="packages">
+  <h2>Best CCTV Packages</h2>
+  <p class="sub">CP Plus • Hikvision • Trusted Installation</p>
+
+  <div class="grid">
+
+    <!-- HD PACKAGE -->
+    <div class="card green">
+      <h3>🏠 HD CCTV Package</h3>
+      <p>✔ 4 HD Cameras (2MP)</p>
+      <p>✔ CP Plus Brand</p>
+      <p>✔ DVR + 500GB Hard Disk</p>
+      <p class="price">₹14,999*</p>
+      <a class="btn" href="index.html#enquiry">Get Quotation</a>
+    </div>
+
+    <!-- SHOP PACKAGE -->
+    <div class="card orange">
+      <h3>🏪 Shop CCTV Package</h3>
+      <p>✔ 4 Cameras</p>
+      <p>✔ Night Vision</p>
+      <p>✔ DVR + 500GB HDD</p>
+      <p class="price">₹15,999*</p>
+      <a class="btn" href="index.html#enquiry">Get Quotation</a>
+    </div>
+
+    <!-- IP PACKAGE -->
+    <div class="card purple">
+      <h3>🌐 IP Camera Package</h3>
+      <p>✔ 2 Dome IP Camera</p>
+      <p>✔ 2 Bullet IP Camera</p>
+      <p>✔ NVR + 500GB HDD</p>
+      <p class="price">₹24,999*</p>
+      <a class="btn" href="index.html#enquiry">Get Quotation</a>
+    </div>
+
+  </div>
+
+  <p style="text-align:center;color:#bbdefb;font-size:14px;margin-top:35px;">
+    *Final price depends on wiring & site condition
+  </p>
+</section>
+
+</body>
+</html>
