@@ -121,13 +121,29 @@ footer{
 <header>
   <h1>TaskMate CCTV Services</h1>
   <p>Professional CCTV Installation & Security Solutions</p>
-<a href="packages.html"
-style="display:inline-block;background:#ff9800;color:#fff;
-padding:14px 32px;border-radius:30px;text-decoration:none;font-weight:600;">
-View CCTV Packages →
-</a>
 
+  <!-- NAVIGATION BUTTONS -->
+  <div class="nav-buttons" style="margin-top:20px;text-align:center;">
+    <a href="index.html" 
+       style="display:inline-block;background:#0a3d62;color:#fff;
+       padding:14px 32px;border-radius:30px;text-decoration:none;font-weight:600;margin:5px;">
+      Home
+    </a>
+
+    <a href="packages.html" 
+       style="display:inline-block;background:#ff9800;color:#fff;
+       padding:14px 32px;border-radius:30px;text-decoration:none;font-weight:600;margin:5px;">
+      Packages
+    </a>
+
+    <a href="gallery/gallery.html" 
+       style="display:inline-block;background:#ff5722;color:#fff;
+       padding:14px 32px;border-radius:30px;text-decoration:none;font-weight:600;margin:5px;">
+      Gallery
+    </a>
+  </div>
 </header>
+
 
 
 <section>
@@ -279,6 +295,38 @@ View CCTV Packages →
     <form id="quotationForm"
           action="https://formsubmit.co/taskmate.co.in@gmail.com"
           method="POST">
+      <script>
+document.getElementById('quotationForm').addEventListener('submit', function(){
+  let msg =
+    "New CCTV Quotation Enquiry\n\n" +
+    "Name: " + document.getElementById('name').value + "\n" +
+    "Mobile: " + document.getElementById('mobile').value + "\n" +
+    "Address: " + document.getElementById('address').value + "\n\n" +
+
+    "Camera Details\n" +
+    "Brand: " + document.getElementById('brand').value + "\n" +
+    "Model: " + document.getElementById('model').value + "\n" +
+    "Bullet Qty: " + document.getElementById('bulletQty').value + "\n" +
+    "Dome Qty: " + document.getElementById('domeQty').value + "\n" +
+    "WiFi Qty: " + document.getElementById('wifiQty').value + "\n\n" +
+
+    "Cable & Accessories\n" +
+    "Cable Type: " + (document.querySelector('[name="Cable Type"]')?.value || '') + "\n" +
+    "Cable Length: " + (document.querySelector('[name="Cable Length"]')?.value || '') + "\n" +
+    "RJ45 Qty: " + (document.querySelector('[name="RJ45 Connector Qty"]')?.value || '') + "\n" +
+    "BNC Qty: " + (document.querySelector('[name="BNC Connector Qty"]')?.value || '') + "\n" +
+    "DC Qty: " + (document.querySelector('[name="DC Connector Qty"]')?.value || '') + "\n\n" +
+
+    "Hard Disk\n" +
+    "HDD Brand: " + (document.querySelector('[name="Hard Disk Brand"]')?.value || '') + "\n" +
+    "HDD Capacity: " + (document.querySelector('[name="Hard Disk Capacity"]')?.value || '');
+
+  window.open(
+    "https://wa.me/918084078886?text=" + encodeURIComponent(msg),
+    "_blank"
+  );
+});
+</script>
 
       <!-- FormSubmit Settings -->
       <input type="hidden" name="_subject" value="New CCTV Quotation Enquiry">
@@ -353,6 +401,101 @@ value="https://taskmatecctvinstalation.github.io/taskmate/index.html">
         <option value="">Select Quantity</option>
         <script>for(let i=1;i<=100;i++){document.write(`<option>${i}</option>`);}</script>
       </select>
+      
+      <!-- ====== CABLE & CONNECTOR DETAILS (ADDED) ====== -->
+<h3 style="color:#1565c0;margin-top:25px;">🔌 Cable & Connector Details</h3>
+
+<!-- CABLE TYPE -->
+<label><strong>Cable Type</strong></label>
+<select name="Cable Type" style="width:100%;padding:10px;margin:6px 0;border-radius:6px;">
+  <option value="">Select Cable Type</option>
+  <option>CAT6 Cable</option>
+  <option>4+1 CCTV Cable</option>
+</select>
+
+<!-- CABLE LENGTH -->
+<label>Cable Length</label>
+<select name="Cable Length" style="width:100%;padding:10px;margin:6px 0;border-radius:6px;">
+  <option value="">Select Length</option>
+  <!-- 1m to 305m -->
+  <script>
+    for(let i=1;i<=305;i++){
+      document.write(`<option>${i} Meter</option>`);
+    }
+  </script>
+</select>
+
+<!-- RJ45 CONNECTOR -->
+<label>RJ45 Connector Quantity</label>
+<select name="RJ45 Connector Qty" style="width:100%;padding:10px;margin:6px 0;">
+  <option value="">Select Quantity</option>
+  <script>
+    for(let i=1;i<=500;i++){
+      document.write(`<option>${i}</option>`);
+    }
+  </script>
+</select>
+
+<!-- BNC CONNECTOR -->
+<label>BNC Connector Quantity</label>
+<select name="BNC Connector Qty" style="width:100%;padding:10px;margin:6px 0;">
+  <option value="">Select Quantity</option>
+  <script>
+    for(let i=1;i<=500;i++){
+      document.write(`<option>${i}</option>`);
+    }
+  </script>
+</select>
+
+<!-- DC CONNECTOR -->
+<label>DC Connector Quantity</label>
+<select name="DC Connector Qty" style="width:100%;padding:10px;margin:6px 0;">
+  <option value="">Select Quantity</option>
+  <script>
+    for(let i=1;i<=500;i++){
+      document.write(`<option>${i}</option>`);
+    }
+  </script>
+</select>
+<!-- ====== CABLE & CONNECTOR DETAILS END ====== -->
+
+      <!-- ====== HARD DISK DETAILS (FULL NEW CODE) ====== -->
+<h3 style="color:#2e7d32;margin-top:25px;">💾 Hard Disk (DVR / NVR Recording)</h3>
+
+<!-- HARD DISK BRAND -->
+<label><strong>Hard Disk Brand</strong></label>
+<select name="Hard Disk Brand"
+        style="width:100%;padding:10px;margin:6px 0;border-radius:6px;border:1px solid #ccc;">
+  <option value="">Select Hard Disk Brand</option>
+  <option>WD (Western Digital)</option>
+  <option>Seagate</option>
+  <option>Toshiba</option>
+  <option>Hikvision</option>
+  <option>CP Plus</option>
+  <option>Other / No Preference</option>
+</select>
+
+<!-- HARD DISK CAPACITY -->
+<label><strong>Hard Disk Capacity</strong></label>
+<select name="Hard Disk Capacity"
+        style="width:100%;padding:10px;margin:6px 0;border-radius:6px;border:1px solid #ccc;">
+  <option value="">Select Storage Capacity</option>
+  <option>1 TB</option>
+  <option>2 TB</option>
+  <option>3 TB</option>
+  <option>4 TB</option>
+  <option>5 TB</option>
+  <option>6 TB</option>
+  <option>8 TB</option>
+  <option>10 TB</option>
+</select>
+
+<!-- HARD DISK PURPOSE -->
+<p style="font-size:13px;color:#555;margin-top:6px;">
+  ✔ CCTV surveillance hard disk suitable for 24×7 DVR / NVR recording
+</p>
+<!-- ====== HARD DISK DETAILS END ====== -->
+
 
       <!-- SUBMIT -->
       <button type="submit" style="width:100%;margin-top:25px;padding:15px;background:#25D366;color:#fff;font-size:18px;border:none;border-radius:30px;cursor:pointer;">
@@ -367,17 +510,34 @@ value="https://taskmatecctvinstalation.github.io/taskmate/index.html">
 </section>
 
 <script>
-document.getElementById('quotationForm').addEventListener('submit', function(){
+document.getElementById('quotationForm').addEventListener('submit', function(e){
+  e.preventDefault(); // ❗ ERROR FIX
+
   let msg =
-    "New CCTV Quotation Enquiry\n\n" +
+    "📋 CCTV Quotation Enquiry\n\n" +
+
+    "👤 Customer Details\n" +
     "Name: " + document.getElementById('name').value + "\n" +
     "Mobile: " + document.getElementById('mobile').value + "\n" +
-    "Address: " + document.getElementById('address').value + "\n" +
+    "Address: " + document.getElementById('address').value + "\n\n" +
+
+    "📷 Camera Details\n" +
     "Brand: " + document.getElementById('brand').value + "\n" +
     "Model: " + document.getElementById('model').value + "\n" +
     "Bullet Qty: " + document.getElementById('bulletQty').value + "\n" +
     "Dome Qty: " + document.getElementById('domeQty').value + "\n" +
-    "WiFi Qty: " + document.getElementById('wifiQty').value;
+    "WiFi Qty: " + document.getElementById('wifiQty').value + "\n\n" +
+
+    "🔌 Cable & Accessories\n" +
+    "Cable Type: " + (document.querySelector('[name=\"Cable Type\"]')?.value || '') + "\n" +
+    "Cable Length: " + (document.querySelector('[name=\"Cable Length\"]')?.value || '') + "\n" +
+    "RJ45 Qty: " + (document.querySelector('[name=\"RJ45 Connector Qty\"]')?.value || '') + "\n" +
+    "BNC Qty: " + (document.querySelector('[name=\"BNC Connector Qty\"]')?.value || '') + "\n" +
+    "DC Qty: " + (document.querySelector('[name=\"DC Connector Qty\"]')?.value || '') + "\n\n" +
+
+    "💾 Hard Disk\n" +
+    "Brand: " + (document.querySelector('[name=\"Hard Disk Brand\"]')?.value || '') + "\n" +
+    "Capacity: " + (document.querySelector('[name=\"Hard Disk Capacity\"]')?.value || '');
 
   window.open(
     "https://wa.me/918084078886?text=" + encodeURIComponent(msg),
@@ -385,6 +545,8 @@ document.getElementById('quotationForm').addEventListener('submit', function(){
   );
 });
 </script>
+
+  
 <!-- ====== FINAL CCTV QUOTATION & ENQUIRY SECTION END ====== -->
 
 <!-- WHATSAPP BUTTON (SAFE) -->
@@ -423,6 +585,7 @@ document.getElementById('quotationForm').addEventListener('submit', function(){
 
 </body>
 </html>
+
 
 
 
