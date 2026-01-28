@@ -122,21 +122,36 @@ footer{
   </div>
 
   <!-- VIDEOS SECTION -->
-  <h2>🎥 Installation Videos</h2>
-  <div class="video-grid">
-    <script>
-      for(let i=1;i<=6;i++){
-        document.write(`
-          <div class="video-box">
-            <video controls controlsList="nodownload" disablePictureInPicture preload="metadata" oncontextmenu="return false">
-              <source src="videos/Demo.mp4/Demo Video${i}.mp4" type="video/mp4">
-            </video>
-            <p>Demo Video${i}</p>
-          </div>
-        `);
-      }
-    </script>
-  </div>
+<h2>🎥 Installation Videos</h2>
+
+<div class="video-grid">
+  <script>
+    const videos = [
+      "video1.mp4",
+      "video2.mp4",
+      "video3.mp4",
+      "video4.mp4"
+    ];
+
+    videos.forEach((video, index) => {
+      document.write(`
+        <div class="video-box">
+          <video controls
+            controlsList="nodownload"
+            disablePictureInPicture
+            preload="metadata"
+            oncontextmenu="return false">
+            
+            <source src="videos/${video}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p>Demo Video ${index + 1}</p>
+        </div>
+      `);
+    });
+  </script>
+</div>
+
 
  
   </div>
@@ -149,5 +164,6 @@ footer{
 
 </body>
 </html>
+
 
 
