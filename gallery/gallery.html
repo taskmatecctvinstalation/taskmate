@@ -125,27 +125,24 @@ footer{
 <h2>🎥 Installation Videos</h2>
 
 <div class="video-grid">
-
-  <div class="video-box">
-    <video controls
-      controlsList="nodownload"
-      disablePictureInPicture
-      preload="metadata"
-      oncontextmenu="return false">
-
-      <source src="videos/Video1.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-
-    <p>Installation Video</p>
-  </div>
-
+  <script>
+    for(let i = 1; i <= 5; i++){
+      document.write(`
+        <div class="video-box">
+          <video controls
+            controlsList="nodownload"
+            disablePictureInPicture
+            preload="metadata"
+            oncontextmenu="return false">
+            <source src="videos/Video${i}.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p>Installation Video ${i}</p>
+        </div>
+      `);
+    }
+  </script>
 </div>
-
-
-
- 
-  </div>
 
 </div>
 
@@ -155,6 +152,7 @@ footer{
 
 </body>
 </html>
+
 
 
 
