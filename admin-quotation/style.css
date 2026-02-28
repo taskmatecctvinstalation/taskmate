@@ -1,0 +1,195 @@
+/* =========================
+   General Body & Container
+========================= */
+body {
+  font-family: Arial, sans-serif;
+  background: #eef2f5;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* =========================
+   Header Section
+========================= */
+.header {
+  text-align: center;
+  background: #0b5394;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.header h1 {
+  margin: 5px 0;
+  font-size: 28px;
+}
+
+.header p {
+  margin: 2px 0;
+  font-size: 14px;
+}
+
+.header .date {
+  margin-top: 5px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* =========================
+   Customer & Block Sections
+========================= */
+.block {
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Customer Section Color */
+.block:nth-of-type(2) {
+  background: #d9ead3;
+}
+
+/* Camera Section Color */
+.block:nth-of-type(3) {
+  background: #fff2cc;
+}
+
+/* NVR/DVR Section Color */
+.block:nth-of-type(4) {
+  background: #c9daf8;
+}
+
+/* Summary Section Color */
+.total-block {
+  background: #d9d2e9;
+  text-align: left;
+  padding: 20px;
+}
+
+/* =========================
+   Headings
+========================= */
+.block h2 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+/* Customer Section heading color */
+.block:nth-of-type(2) h2 {
+  color: #1155cc;
+}
+
+/* Camera Section heading color */
+.block:nth-of-type(3) h2 {
+  color: #b45f06;
+}
+
+/* NVR/DVR heading color */
+.block:nth-of-type(4) h2 {
+  color: #073763;
+}
+
+/* Summary heading color */
+.total-block h2 {
+  color: #6a0dad;
+}
+
+/* =========================
+   Grid & Row Layouts
+========================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 5px;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.header-row {
+  font-weight: bold;
+  background: #f6b26b;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+/* =========================
+   Input, Select & Textarea
+========================= */
+input[type="text"],
+input[type="tel"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 6px 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 50px;
+}
+
+/* Amount input readonly styling */
+input[readonly] {
+  background: #f0f0f0;
+  color: #333;
+}
+
+/* =========================
+   Button Styling
+========================= */
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 8px 15px;
+  transition: 0.3s;
+}
+
+#downloadPDF {
+  background: #0b5394;
+  color: white;
+}
+
+#downloadPDF:hover {
+  background: #073763;
+}
+
+/* =========================
+   Responsive Adjustments
+========================= */
+@media screen and (max-width: 768px) {
+  .row, .header-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .row, .header-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}

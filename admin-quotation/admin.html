@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Admin Quotation | TaskMate CCTV</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="style.css">
+
+<!-- html2canvas -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<!-- jsPDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header" style="text-align:center; background:#0b5394; color:white; padding:10px; border-radius:10px;">
+    <h1 style="margin:5px 0;">TaskMate CCTV Services</h1>
+    <p style="margin:2px 0;">Email: taskmate.co.in@gmail.com | Mobile: 8084078886</p>
+    <div>Date: <span id="todayDate"></span></div>
+  </div>
+
+  <!-- CUSTOMER DETAILS -->
+  <div class="block" style="background:#d9ead3; padding:10px; margin-top:10px; border-radius:8px;">
+    <h2 style="color:#1155cc;">Customer Details</h2>
+    <div class="grid">
+  <input type="text" class="customer" placeholder="Customer Name">
+  <input type="tel" class="customer" placeholder="Mobile Number">
+</div>
+
+
+<textarea class="customer"
+  placeholder="Full Address"
+  rows="4"
+  style="width:100%; min-height:90px; margin-top:10px; resize:vertical;">
+</textarea>
+  </div>
+
+  <!-- CAMERA DETAILS -->
+  <div class="block" style="background:#fff2cc; padding:10px; margin-top:10px; border-radius:8px;">
+    <h2 style="color:#b45f06;">Camera Details</h2>
+
+    <div class="row header-row">
+      <span>Type</span>
+      <span>Brand</span>
+      <span>Model</span>
+      <span>Qty</span>
+      <span>Price</span>
+      <span>Total</span>
+    </div>
+
+    <!-- Bullet -->
+    <div class="row quotation-row">
+      <span class="item-type">Bullet</span>
+      <select class="brand">
+        <option value="">Select Brand</option>
+        <option>CP Plus</option>
+        <option>Hikvision</option>
+        <option>Dahua</option>
+        <option>Prama</option>
+        <option>Uniview</option>
+      </select>
+      <input type="text" class="model" placeholder="Model No">
+      <select class="qty"></select>
+      <input type="number" class="price" placeholder="Price">
+      <input type="text" class="amount" readonly>
+    </div>
+
+    <!-- Dome -->
+    <div class="row quotation-row">
+      <span class="item-type">Dome</span>
+      <select class="brand">
+        <option value="">Select Brand</option>
+        <option>CP Plus</option>
+        <option>Hikvision</option>
+        <option>Dahua</option>
+        <option>Prama</option>
+        <option>Uniview</option>
+      </select>
+      <input type="text" class="model" placeholder="Model No">
+      <select class="qty"></select>
+      <input type="number" class="price" placeholder="Price">
+      <input type="text" class="amount" readonly>
+    </div>
+
+    <!-- WiFi -->
+    <div class="row quotation-row">
+      <span class="item-type">WiFi</span>
+      <select class="brand">
+        <option value="">Select Brand</option>
+        <option>MI</option>
+        <option>EZVIZ</option>
+        <option>TP-Link</option>
+      </select>
+      <input type="text" class="model" placeholder="Model No">
+      <select class="qty"></select>
+      <input type="number" class="price" placeholder="Price">
+      <input type="text" class="amount" readonly>
+    </div>
+  </div>
+
+  <!-- NVR / DVR / HDD -->
+  <div class="block" style="background:#c9daf8; padding:10px; margin-top:10px; border-radius:8px;">
+    <h2 style="color:#073763;">NVR / DVR / Hard Disk</h2>
+
+    <div class="row quotation-row">
+      <span class="item-type">NVR</span>
+      <select class="brand">
+        <option value="">Select Brand</option>
+        <option>CP Plus</option>
+        <option>Hikvision</option>
+        <option>Dahua</option>
+        <option>Prama</option>
+      </select>
+      <input type="text" class="model" placeholder="Model No">
+      <select class="qty"></select>
+      <input type="number" class="price" placeholder="Price">
+      <input type="text" class="amount" readonly>
+    </div>
+
+    <div class="row quotation-row">
+      <span class="item-type">DVR</span>
+      <select class="brand">
+        <option value="">Select Brand</option>
+        <option>CP Plus</option>
+        <option>Hikvision</option>
+        <option>Dahua</option>
+        <option>Prama</option>
+      </select>
+      <input type="text" class="model" placeholder="Model No">
+      <select class="qty"></select>
+      <input type="number" class="price" placeholder="Price">
+      <input type="text" class="amount" readonly>
+    </div>
+
+    <div class="row quotation-row">
+      <span class="item-type">Hard Disk</span>
+      <select class="brand">
+        <option value="">Select Brand</option>
+        <option>Seagate</option>
+        <option>WD</option>
+        <option>Toshiba</option>
+      </select>
+      <input type="text" class="model" placeholder="500GB / 1TB / 2TB / 4TB / 8TB / 16TB">
+      <select class="qty"></select>
+      <input type="number" class="price" placeholder="Price">
+      <input type="text" class="amount" readonly>
+    </div>
+<!-- MEMORY CARD -->
+<div class="row quotation-row">
+  <span class="item-type">Memory Card</span>
+
+  <select class="brand">
+    <option value="">Select Brand</option>
+    <option>SanDisk</option>
+    <option>CP Plus</option>
+    <option>Hikvision</option>
+    <option>Samsung</option>
+    <option>WD</option>
+    <option>Other</option>
+  </select>
+
+  <input type="text" class="model" placeholder="8GB / 16GB / 32GB / 64GB / 128GB / 256GB">
+  <select class="qty"></select>
+  <input type="number" class="price" placeholder="Price">
+  <input type="text" class="amount" readonly>
+</div>
+  </div>
+
+  <!-- ADDITIONAL ITEMS -->
+  <div class="block" style="background:#ead1dc; padding:10px; margin-top:10px; border-radius:8px;">
+    <h2 style="color:#741b47;">Additional Items</h2>
+
+    <!-- CAT6 CABLE -->
+    <div class="row quotation-row">
+      <span class="item-type">CAT6 Cable</span>
+
+      <select class="brand">
+        <option value="">Select Brand</option>
+        <option>D-Link (100m)</option>
+        <option>D-Link (305m)</option>
+        <option>CP Plus (100m)</option>
+        <option>CP Plus (305m)</option>
+        <option>Hikvision (305m)</option>
+        <option>Other</option>
+      </select>
+
+      <input type="text" class="model" placeholder="Cable Length / Spec">
+      <select class="qty"></select>
+      <input type="number" class="price" placeholder="Price">
+      <input type="text" class="amount" readonly>
+    </div>
+
+    <!-- RJ45 -->
+    <div class="row quotation-row">
+      <span class="item-type">RJ45 Connector</span>
+      <input type="text" class="brand" placeholder="Brand">
+      <input type="text" class="model" placeholder="Type">
+      <select class="qty"></select>
+      <input type="text" class="price" placeholder="Price">
+      <input type="text" class="amount" readonly>
+    </div>
+<!-- SMPS -->
+<div class="row quotation-row">
+  <span class="item-type">SMPS</span>
+
+  <select class="brand">
+    <option value="">Select Channel</option>
+    <option>4 Channel</option>
+    <option>8 Channel</option>
+    <option>16 Channel</option>
+    <option>32 Channel</option>
+  </select>
+
+  <input type="text" class="model" placeholder="Model / Specification">
+  <select class="qty"></select>
+  <input type="number" class="price" placeholder="Price">
+  <input type="text" class="amount" readonly>
+</div>
+
+<!-- BNC CONNECTOR -->
+<div class="row quotation-row">
+  <span class="item-type">BNC Connector</span>
+  <input type="text" class="brand" placeholder="Brand">
+  <input type="text" class="model" placeholder="Type">
+  <select class="qty"></select>
+  <input type="number" class="price" placeholder="Price">
+  <input type="text" class="amount" readonly>
+</div>
+
+<!-- DC CONNECTOR -->
+<div class="row quotation-row">
+  <span class="item-type">DC Connector</span>
+  <input type="text" class="brand" placeholder="Brand">
+  <input type="text" class="model" placeholder="Type">
+  <select class="qty"></select>
+  <input type="number" class="price" placeholder="Price">
+  <input type="text" class="amount" readonly>
+</div>
+
+<!-- 4+1 CABLE -->
+<div class="row quotation-row">
+  <span class="item-type">4+1 Cable</span>
+
+  <select class="brand">
+    <option value="">Select Brand</option>
+    <option>Polycab</option>
+    <option>Havells</option>
+    <option>Finolex</option>
+    <option>CP Plus</option>
+    <option>Other</option>
+  </select>
+
+  <select class="model">
+    <option value="">Select Length</option>
+    <option>90m</option>
+    <option>180m</option>
+    <option>270m</option>
+    <option>305m</option>
+  </select>
+
+  <select class="qty"></select>
+  <input type="number" class="price" placeholder="Price">
+  <input type="text" class="amount" readonly>
+</div>
+    <!-- INSTALLATION -->
+    <div class="row quotation-row">
+      <span class="item-type">Camera Installation Charge</span>
+      <input type="text" class="brand" placeholder="-" disabled>
+      <input type="text" class="model" placeholder="Installation Service">
+      <select class="qty">
+        <option value="1">1</option>
+      </select>
+      <input type="number" class="price" placeholder="Charge Amount">
+      <input type="text" class="amount" readonly>
+    </div>
+
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="block total-block" style="background:#d9d2e9; padding:10px; margin-top:10px; border-radius:8px;">
+    <h2 style="color:#6a0dad;">Summary</h2>
+    <input type="text" id="subtotal" placeholder="Sub Total" readonly>
+    <input type="text" id="gst" placeholder="GST 18%" readonly>
+    <input type="text" id="grandtotal" placeholder="Grand Total" readonly>
+
+    <button type="button" id="downloadPDF"
+      style="background:#0b5394; color:white; padding:8px 15px; border:none; border-radius:5px; cursor:pointer;">
+      Download PDF
+    </button>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

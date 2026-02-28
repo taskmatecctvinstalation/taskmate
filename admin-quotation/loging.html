@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Admin Login | TaskMate CCTV</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  font-family:Arial, sans-serif;
+}
+.login-box{
+  background:#fff;
+  padding:30px;
+  width:320px;
+  border-radius:10px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+.login-box h2{
+  margin-bottom:20px;
+  color:#203a43;
+}
+.login-box input{
+  width:100%;
+  padding:12px;
+  margin-bottom:15px;
+  border:1px solid #ccc;
+  border-radius:6px;
+  font-size:16px;
+}
+.login-box button{
+  width:100%;
+  padding:12px;
+  border:none;
+  background:#203a43;
+  color:#fff;
+  font-size:16px;
+  border-radius:6px;
+  cursor:pointer;
+}
+.login-box button:hover{
+  background:#2c5364;
+}
+.error{
+  color:red;
+  display:none;
+  margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="login-box">
+  <h2>Admin Login</h2>
+  <input type="password" id="password" placeholder="Enter Password">
+  <button onclick="checkLogin()">Login</button>
+  <div class="error" id="errorMsg">Wrong Password!</div>
+</div>
+
+<script>
+function checkLogin(){
+  const correctPassword = "f3145@@@J"; // 👉 aap chaaho to change kar sakte ho
+  const enteredPassword = document.getElementById("password").value;
+
+  if(enteredPassword === correctPassword){
+    window.location.href = "admin.html";
+  } else {
+    document.getElementById("errorMsg").style.display = "block";
+  }
+}
+</script>
+
+</body>
+</html>
