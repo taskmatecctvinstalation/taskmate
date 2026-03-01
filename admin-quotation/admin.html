@@ -301,22 +301,39 @@
 
   </div>
 
-  <!-- SUMMARY -->
-  <div class="block total-block" style="background:#d9d2e9; padding:10px; margin-top:10px; border-radius:8px;">
-    <h2 style="color:#6a0dad;">Summary</h2>
-    <input type="text" id="subtotal" placeholder="Sub Total" readonly>
-    <input type="text" id="gst" placeholder="GST 18%" readonly>
-    <input type="text" id="grandtotal" placeholder="Grand Total" readonly>
+<!-- SUMMARY -->
+<div class="block total-block" style="background:#d9d2e9; padding:10px; margin-top:10px; border-radius:8px;">
+  <h2 style="color:#6a0dad;">Summary</h2>
 
-    <button type="button" id="downloadPDF"
-      style="background:#0b5394; color:white; padding:8px 15px; border:none; border-radius:5px; cursor:pointer;">
-      Download PDF
-    </button>
+  <!-- Subtotal -->
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-top:5px;">
+    <label for="subtotal" style="color:#6a0dad; font-weight:bold;">Sub Total</label>
+    <input type="text" id="subtotal" readonly style="text-align:right;">
   </div>
+
+  <!-- GST 18% -->
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-top:5px;">
+    <label for="gst" style="color:#6a0dad; font-weight:bold;">GST 18%</label>
+    <input type="text" id="gst" readonly style="text-align:right;">
+  </div>
+
+  <!-- Grand Total -->
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-top:5px;">
+    <label for="grandtotal" style="color:#6a0dad; font-weight:bold;">Grand Total</label>
+    <input type="text" id="grandtotal" readonly style="text-align:right;">
+  </div>
+
+  <!-- Download PDF Button -->
+  <button type="button" id="downloadPDF"
+    style="background:#0b5394; color:white; padding:8px 15px; border:none; border-radius:5px; cursor:pointer; margin-top:10px;">
+    Download PDF
+  </button>
+</div>
 
 </div>
 
 <script src="script.js"></script>
 </body>
 </html>
+
 
